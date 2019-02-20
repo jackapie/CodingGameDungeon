@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingGameDungeon", "CodingGameDungeon\CodingGameDungeon.csproj", "{7C1CB70A-6304-4EB5-A059-0915D83948FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingGameDungeonTests", "CodingGameDungeonTests\CodingGameDungeonTests.csproj", "{9B7C9A16-C9C2-4B17-9BB0-222763C22467}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7C1CB70A-6304-4EB5-A059-0915D83948FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C1CB70A-6304-4EB5-A059-0915D83948FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C1CB70A-6304-4EB5-A059-0915D83948FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7C9A16-C9C2-4B17-9BB0-222763C22467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7C9A16-C9C2-4B17-9BB0-222763C22467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7C9A16-C9C2-4B17-9BB0-222763C22467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7C9A16-C9C2-4B17-9BB0-222763C22467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
