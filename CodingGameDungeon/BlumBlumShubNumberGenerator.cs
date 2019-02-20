@@ -39,26 +39,16 @@ namespace CodingGameDungeon
         }
 
         public int Power(int p, int q, int n)
-        {
-
-            var factor = new BigInteger(1);
-            for (int i = 0; i < n; i++)
-            {
-                factor = factor * 2;
-            }
-            return (int)(factor % LambdaM(p, q));
+        {                       
+            return (int)(BigInteger.ModPow(2, n , LambdaM(p, q)));
         }
 
         public int GenerateNthTerm(int r, int p, int q, int n)
         {
             var power = Power(p, q, n);
-            var factor = new BigInteger(1);
-            for (int i = 0; i < power; i++)
-            {
-                factor = factor * r;
-            }
+            
 
-            return (int)(factor % (p * q));
+            return (int)BigInteger.ModPow(r, power, (p * q));
         }
 
         public int GenerateNextTerm(int xn, int p, int q)
