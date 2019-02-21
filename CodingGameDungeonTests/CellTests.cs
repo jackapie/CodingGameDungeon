@@ -16,7 +16,7 @@ namespace CodingGameDungeon.Tests
         {
             var generator = new BlumBlumShubNumberGenerator(100000, 1723, 1579);
             var cell = new Cell(0, 0, 3, 2, generator);
-            var contents = cell.GetContents();
+            var contents = cell.Contents;
             
             Assert.AreEqual(".#", contents[0]);
             Assert.AreEqual(".#", contents[1]);
@@ -26,7 +26,7 @@ namespace CodingGameDungeon.Tests
         {
             var generator = new BlumBlumShubNumberGenerator(100000, 1723, 1579);
             var cell = new Cell(1, 0, 3, 2, generator);
-            var contents = cell.GetContents();
+            var contents = cell.Contents;
 
             Assert.AreEqual(".#", contents[0]);
             Assert.AreEqual(".#", contents[1]);
@@ -36,7 +36,7 @@ namespace CodingGameDungeon.Tests
         {
             var generator = new BlumBlumShubNumberGenerator(100000, 1723, 1579);
             var cell = new Cell(0, 1, 3, 2, generator);
-            var contents = cell.GetContents();
+            var contents = cell.Contents;
 
             Assert.AreEqual("..", contents[0]);
             Assert.AreEqual("##", contents[1]);
@@ -47,7 +47,7 @@ namespace CodingGameDungeon.Tests
         {
             var generator = new BlumBlumShubNumberGenerator(100000, 1723, 1579);
             var cell = new Cell(2, 1, 3, 2, generator);
-            var contents = cell.GetContents();
+            var contents = cell.Contents;
 
             Assert.AreEqual(".#", contents[0]);
             Assert.AreEqual(".#", contents[1]);

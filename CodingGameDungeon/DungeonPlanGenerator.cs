@@ -6,33 +6,34 @@ using System.Threading.Tasks;
 
 namespace CodingGameDungeon
 {
-    public class DungeonPlan
+    public class DungeonPlanGenerator
     {
         int W { get; set; }
         int H { get; set; }
 
         BlumBlumShubNumberGenerator RandomGenerator { get; set; }
 
-        public DungeonPlan(int w, int h, BlumBlumShubNumberGenerator random)
+        public DungeonPlanGenerator(int w, int h, BlumBlumShubNumberGenerator rndmNumberGenerator)
         {
             W = w;
             H = h;
-            RandomGenerator = random;
-        }
+            RandomGenerator = rndmNumberGenerator;
+        }                
 
-        List<Cell> Cells { get; set; }        
-
-        public List<Cell> GetCells()
+        public List<List<Cell>> GetCells()
         {
+            var plan = new List<List<Cell>>();
             for (int y = 0; y < H; y++)
             {
+                var cells = new List<Cell>();
                 for (int x = 0; x < W; x++)
                 {
                     var cell = new Cell(x, y, W, H, RandomGenerator);
-                    Cells.Add(cell);
+                    cells.Add(cell);
                 }
+                plan.Add(cells);
             }
-            return Cells;
+            return plan;
         }
 
 

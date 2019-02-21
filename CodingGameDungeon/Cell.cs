@@ -10,13 +10,12 @@ namespace CodingGameDungeon
     {
         int X { get; set; }
         int Y { get; set; }
-
-        BlumBlumShubNumberGenerator RandomGenerator { get; set; }
         int W { get; set; }
         int H { get; set; }
-        
 
-        List<string> Contents { get; set; }
+        BlumBlumShubNumberGenerator RandomGenerator { get; set; }      
+        
+        public List<string> Contents { get; set; }
 
         public Cell(int x, int y, int w, int h, BlumBlumShubNumberGenerator generator)
         {
@@ -25,6 +24,7 @@ namespace CodingGameDungeon
             W = w;
             H = h;
             RandomGenerator = generator;
+            Contents = GetContents();
             
         }
 

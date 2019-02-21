@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="BlumBlumShubNumberGenerator.cs" />
     <Compile Include="Cell.cs" />
-    <Compile Include="DungeonPlan.cs" />
+    <Compile Include="DungeonPlanGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
