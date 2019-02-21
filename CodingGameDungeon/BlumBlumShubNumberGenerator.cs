@@ -10,6 +10,16 @@ namespace CodingGameDungeon
     public class BlumBlumShubNumberGenerator
     {
        
+        int R { get; set; }
+        int P { get; set; }
+        int Q { get; set; }
+
+        public BlumBlumShubNumberGenerator(int r, int p, int q)
+        {
+            R = r;
+            P = p;
+            Q = q;
+        }
 
         int LeastCommonMultiple(int a, int b)
         {
@@ -33,27 +43,27 @@ namespace CodingGameDungeon
             return num1 * num2;
         }
                 
-        public int LambdaM(int p, int q)
+        public int LambdaM()
         {
-            return LeastCommonMultiple(p - 1, q - 1);
+            return LeastCommonMultiple(P - 1, Q - 1);
         }
 
-        public int Power(int p, int q, int n)
+        public int Power( int n)
         {                       
-            return (int)(BigInteger.ModPow(2, n , LambdaM(p, q)));
+            return (int)(BigInteger.ModPow(2, n , LambdaM()));
         }
 
-        public int GenerateNthTerm(int r, int p, int q, int n)
+        public int GenerateNthTerm(int n)
         {
-            var power = Power(p, q, n);
+            var power = Power(n);
             
 
-            return (int)BigInteger.ModPow(r, power, (p * q));
+            return (int)BigInteger.ModPow(R, power, (P * Q));
         }
 
-        public int GenerateNextTerm(int xn, int p, int q)
+        public int GenerateNextTerm(int xn)
         {
-            return (xn * xn) % (p * q);
+            return (xn * xn) % (P * Q);
         }
     }
 }

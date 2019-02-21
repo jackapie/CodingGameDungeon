@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BlumBlumShubNumberGeneratorTests.cs" />
+    <Compile Include="CellTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
