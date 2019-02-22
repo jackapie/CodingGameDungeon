@@ -19,12 +19,15 @@ namespace CodingGameDungeon.Tests
             var plan = planGenerator.GetCells();
             // cellxy = plan[y][x];
             var cell00 = plan[0][0];
+            cell00.SetCellType();
             var cell10 = plan[0][1];
+            cell10.SetCellType();
             var cell11 = plan[1][1];
+            cell11.SetCellType();
 
-            Assert.AreEqual(".#", cell00.Contents[0]);
-            Assert.AreEqual(".#", cell10.Contents[0]);
-            Assert.AreEqual("..", cell11.Contents[0]);
+            Assert.AreEqual(CellType.EastWall, cell00.CellContent.Type);
+            Assert.AreEqual(CellType.EastWall, cell10.CellContent.Type);
+            Assert.AreEqual(CellType.SouthWall, cell11.CellContent.Type);
 
         }
     }

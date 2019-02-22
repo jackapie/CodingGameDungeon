@@ -13,9 +13,9 @@ namespace CodingGameDungeon
         int W { get; set; }
         int H { get; set; }
 
-        BlumBlumShubNumberGenerator RandomGenerator { get; set; }      
-        
-        public List<string> Contents { get; set; }
+        BlumBlumShubNumberGenerator RandomGenerator { get; set; }
+
+        public CellContent CellContent { get; set; }
 
         public Cell(int x, int y, int w, int h, BlumBlumShubNumberGenerator generator)
         {
@@ -24,48 +24,32 @@ namespace CodingGameDungeon
             W = w;
             H = h;
             RandomGenerator = generator;
-            Contents = GetContents();
-            
         }
 
-        List<string> WallEast = new List<string>()
-        {
-             ".#",
-             ".#"
-        };
 
-        List<string> WallSouth = new List<string>()
-        {
-             "..",
-             "##"
-        };
-
-        public List<string> GetContents()
+        public void SetCellType()
         {
             if (X == W - 1)
             {
-                
-                return WallEast;
+                CellContent = new CellContent(CellType.EastWall);
             }
             else if (Y == H - 1)
             {
-                
-                return WallSouth;
+                CellContent = new CellContent(CellType.SouthWall);
             }
             else
             {
-                
                 var n = X + Y * W + 1;
                 var randomNumber = RandomGenerator.GenerateNthTerm(n);
                 if (randomNumber % 2 == 0)
                 {
-                   
-                    return WallSouth;
+
+                    CellContent = new CellContent(CellType.SouthWall);
                 }
                 else
                 {
-                   
-                    return WallEast;
+
+                    CellContent = new CellContent(CellType.EastWall);
                 }
             }
 
